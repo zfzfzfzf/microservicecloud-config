@@ -1,4 +1,12 @@
+spring: 
+  profiles: 
+    active: 
+    - dev
+---
+server:
+  port: 9003
 spring:
+  profiles: test
   redis:
     host: 60.205.223.17
     port: 6379
@@ -48,8 +56,6 @@ ribbon:   #启动时，自动从用户中心获取ip ,端口号，否则是在�
     clients: member-center
   ReadTimeout: 10000
   ConnectTimeout: 10000
-server:
-  port: 9003
 hystrix:
   command:
     default:
